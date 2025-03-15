@@ -1,9 +1,9 @@
 from typing import Any, Callable
 
-from . import import_errors
 
-
+# Raise stored ImportError to user if mock API is used.
 def _raise_error(module: str) -> None:
+    from . import import_errors  # Avoid circular import.
     pkg = module.split('.')[0]
     if pkg in import_errors:
         raise import_errors[pkg]
@@ -12,6 +12,9 @@ def _raise_error(module: str) -> None:
 
 
 class Mocker:
+    """ Factory for creating mock function and classes which raise an ImportError on usage.
+        To be used exclusively within mock packages, and via absolute import 'bloomberg.Mocker'.
+    """
 
     def __init__(self, module: str) -> None:
         self._module = module

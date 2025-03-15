@@ -1,4 +1,4 @@
-from bloomberg.mocker import Mocker
+from bloomberg._mocker import Mocker
 
 
 _m = Mocker('pandas.tseries.offsets')

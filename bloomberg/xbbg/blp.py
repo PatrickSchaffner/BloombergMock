@@ -1,4 +1,4 @@
-from bloomberg.mocker import Mocker
+from bloomberg._mocker import Mocker
 _mkf = Mocker('xbbg.blp').create_function
 
 __version__ = None
