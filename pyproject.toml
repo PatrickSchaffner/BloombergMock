@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bloomberg"
+dynamic = ["version"]
 authors = [
   {name = "Patrick Schaffner", email = "patrick.schaffner@protonmail.ch"},
 ]
@@ -15,16 +16,24 @@ readme = "README.md"
 license = {text = "MIT License"}
 keywords = ["bloomberg", "blpapi", "blp", "xbbg"]
 requires-python = ">=3.11"
-dependencies = [
-]
-optional-dependencies.test = [
+dependencies = []
+
+[project.optional-dependencies]
+test = [
     "pytest",
     "pytest-cov",
 ]
-dynamic = ["version"]
+blpapi = ["blpapi; sys_platform == 'win32'"]
+xbbg = ["xbbg; sys_platform == 'win32'"]
+blp = ["blp; sys_platform == 'win32'"]
+all = [
+    "blpapi; sys_platform == 'win32'",
+    "xbbg; sys_platform == 'win32'",
+    "blp; sys_platform == 'win32'",
+]
 
 [tool.setuptools.dynamic]
-version = {attr = "bloomberg.__version__"}
+version = {file = "bloomberg/version.txt"}
 
 [tool.setuptools.packages.find]
 where = ["."]
