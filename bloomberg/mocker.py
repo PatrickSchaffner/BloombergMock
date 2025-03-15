@@ -1,12 +1,12 @@
 from typing import Any, Callable
 
-from . import api
+from . import import_errors
 
 
 def _raise_error(module: str) -> None:
     pkg = module.split('.')[0]
-    if pkg in api.import_errors:
-        raise api.import_errors[pkg]
+    if pkg in import_errors:
+        raise import_errors[pkg]
     else:
         raise ImportError(name=module)
 
