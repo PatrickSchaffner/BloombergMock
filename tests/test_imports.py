@@ -1,4 +1,3 @@
-import bloomberg
 
 def test_xbbg():
     import xbbg
@@ -41,3 +40,17 @@ def test_xbbg():
     from xbbg.pipeline import add_ticker
     from xbbg.pipeline import since_year
     from xbbg.pipeline import perf
+
+
+def test_bloomberg_xbbg():
+    import bloomberg
+    import xbbg
+    from bloomberg.xbbg import blp
+    from bloomberg.xbbg.blp import bdh
+
+    assert xbbg is bloomberg.xbbg
+    assert xbbg.blp is bloomberg.xbbg.blp
+    assert xbbg.blp is blp
+    assert xbbg.blp.bdh is bloomberg.xbbg.blp.bdh
+    assert xbbg.blp.bdh is blp.bdh
+    assert xbbg.blp.bdh is bdh
