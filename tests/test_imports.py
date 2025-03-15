@@ -1,5 +1,6 @@
 
 def test_xbbg():
+    import bloomberg
     import xbbg
 
     from xbbg import blp

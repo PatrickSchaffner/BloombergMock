@@ -1,3 +1,8 @@
+from bloomberg.mocker import Mocker
 
-class DateOffset:
-    pass
+
+_m = Mocker('pandas.tseries.offsets')
+_mkc = _m.create_class
+
+
+DateOffset = _mkc('DateOffset')

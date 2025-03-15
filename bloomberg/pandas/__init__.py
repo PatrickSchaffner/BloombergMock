@@ -1,4 +1,7 @@
+from bloomberg.mocker import Mocker
+
+_m = Mocker('pandas')
+_mkc = _m.create_class
 
 
-class DataFrame:
-    pass
+DataFrame = _mkc('DataFrame')

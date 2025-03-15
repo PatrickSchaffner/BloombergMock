@@ -19,6 +19,9 @@ class Mocker:
     def create_function(self, name: str) -> Callable[[Any,...], Any]:
         def _impl(*_1, **_2) -> None:
             _raise_error(self._module)
+        _impl.__name__ = name
+        _impl.__qualname__ = f"{self._module}.{name}"
+        _impl.__module__ = self._module
         return _impl
 
     def create_class(self, name: str) -> type:
@@ -26,4 +29,5 @@ class Mocker:
             def __init__(_1, *_2, **_3) -> None:
                 _raise_error(self._module)
         cls = type(name, (_ClsImpl,), {})
+        cls.__module__ = self._module
         return cls
