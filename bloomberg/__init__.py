@@ -1,4 +1,4 @@
 __version__ = '0.0.0'
 
-from .mocker import initialize_packages
-initialize_packages()
+from .mocker import initialize_packages as _init
+_init()

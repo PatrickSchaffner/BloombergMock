@@ -4,14 +4,6 @@ _mkf = Mocker('xbbg.const').create_function
 Futures = None
 CurrencyPair = None
 ValidSessions = None
-PKG_PATH = None
-ASSET_INFO = None
-DVD_TPYES = None
-DVD_COLS = None
-LIVE_INFO = None
-LIVE_CHG = None
-LIVE_VOL = None
-LIVE_RATIO = None
 
 exch_info = _mkf('exch_info')
 market_info = _mkf('market_info')
