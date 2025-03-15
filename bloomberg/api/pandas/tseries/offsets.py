@@ -1,0 +1,3 @@
+
+class DateOffset:
+    pass
