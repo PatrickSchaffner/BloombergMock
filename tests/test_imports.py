@@ -1,6 +1,6 @@
 
 def test_xbbg():
-    from bloomberg import xbbg
+    from bloomberg.api import xbbg
 
     from xbbg import blp
     from xbbg import pipeline
@@ -48,9 +48,9 @@ def test_bloomberg_xbbg():
     from bloomberg.api.xbbg import blp
     from bloomberg.api.xbbg.blp import bdh
 
-    assert xbbg is bloomberg.xbbg
-    assert xbbg.blp is bloomberg.xbbg.blp
+    assert xbbg is bloomberg.api.xbbg
+    assert xbbg.blp is bloomberg.api.xbbg.blp
     assert xbbg.blp is blp
-    assert xbbg.blp.bdh is bloomberg.xbbg.blp.bdh
+    assert xbbg.blp.bdh is bloomberg.api.xbbg.blp.bdh
     assert xbbg.blp.bdh is blp.bdh
     assert xbbg.blp.bdh is bdh

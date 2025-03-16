@@ -53,3 +53,8 @@ if len(import_errors) > 0:
         except ImportError as e:
             log = getLogger(__name__)
             log.error('Could not import mocked package.', e)
+
+
+__all__ = ['xbbg', 'pandas']
+pandas = sys.modules[f'{__name__}.pandas']
+xbbg = sys.modules[f'{__name__}.xbbg']
