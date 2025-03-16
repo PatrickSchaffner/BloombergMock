@@ -1,14 +1,14 @@
-from bloomberg.pandas.tseries.offsets import DateOffset
+from bloomberg.api.pandas.tseries.offsets import DateOffset
 import bloomberg
 
 import pandas as pd
-import bloomberg.pandas as pd2
+import bloomberg.api.pandas as pd2
 assert pd is pd2
 assert pd is bloomberg.pandas
 print(pd)
 print(pd2)
 
-from bloomberg.pandas import DataFrame
+from bloomberg.api.pandas import DataFrame
 assert DataFrame is pd2.DataFrame
 assert DataFrame is pd.DataFrame
 assert DataFrame is bloomberg.pandas.DataFrame

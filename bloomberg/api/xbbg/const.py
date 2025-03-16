@@ -1,4 +1,4 @@
-from bloomberg._mocker import Mocker
+from bloomberg.mocker import Mocker
 _mkf = Mocker('xbbg.const').create_function
 
 Futures = None

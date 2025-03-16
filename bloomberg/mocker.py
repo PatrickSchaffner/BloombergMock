@@ -1,9 +1,10 @@
 from typing import Any, Callable
 
+from .api import import_errors
+
 
 # Raise stored ImportError to user if mock API is used.
 def _raise_error(module: str) -> None:
-    from . import import_errors  # Avoid circular import.
     pkg = module.split('.')[0]
     if pkg in import_errors:
         raise import_errors[pkg]
